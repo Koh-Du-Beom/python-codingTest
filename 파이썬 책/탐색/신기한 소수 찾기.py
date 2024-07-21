@@ -1,3 +1,5 @@
+#백준 2023번
+
 import sys
 sys.setrecursionlimit(10000)
 input = sys.stdin.readline
