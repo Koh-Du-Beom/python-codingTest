@@ -19,14 +19,11 @@ for num in numbers:
 negative = sorted(negative)
 positive = sorted(positive, reverse=True)
 
-print(negative, positive)
-
 result = 0
 for i in range(0, len(negative), M):
     result += 2 * abs(negative[i])  #음수처리
     
 for i in range(0, len(positive), M):
-    print(positive[i])
     result += 2 * abs(positive[i])
 
 print(result - max_num)
