@@ -4,20 +4,21 @@ input = sys.stdin.readline
 N, M = map(int, input().split())
 arr = list(map(int, input().split()))
 
-ans_len = N + 1
+ans = int(1e12)
 right = -1
-
 cur_sum = 0
 for left in range(N):
-  cur_len = 0
-  while right + 1 < N and cur_sum + arr[right + 1] <= M:
+  while right + 1 < N and cur_sum + arr[right + 1] < M:
     right += 1
     cur_sum += arr[right]
-    cur_len += 1
+    
+  if cur_sum < M and right + 1 < N:
+    right += 1
+    cur_sum += arr[right]
   
-  if cur_sum == M:
-    ans_len = cur_len
-  
+  if right < N and cur_sum >= M:
+    ans = min(ans, right - left + 1)
+
   cur_sum -= arr[left]
 
-print(ans_len)
+print(ans if ans != int(1e12) else 0)
