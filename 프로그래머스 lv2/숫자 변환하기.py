@@ -31,7 +31,6 @@ def solution(x, y, n):
         return time[y]
 
 
-
 #다른 풀이
 def solution(x, y, n):
   answer = 0
