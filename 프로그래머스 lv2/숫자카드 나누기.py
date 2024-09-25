@@ -22,4 +22,4 @@ def solution(arrayA, arrayB):
     if not_div(arrayB, gcd_a):
         answer = max(answer, gcd_a)
     
-    return answer
+    return answer 
