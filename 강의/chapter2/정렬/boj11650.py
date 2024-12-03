@@ -3,10 +3,9 @@ input = sys.stdin.readline
 
 N = int(input())
 
-coordinates = []
-for i in range(N):
-  x, y = map(int, input().split())
-  coordinates.append((x,y))
+lst = [tuple(map(int, input().split())) for _ in range(N)]
 
-result = sorted(coordinates, key=lambda x : (x[0], x[1]))
-print(result)
+sorted_lst = sorted(lst, key = lambda x : (x[0], x[1]))
+
+for x,y in sorted_lst:
+  print(x, y)
